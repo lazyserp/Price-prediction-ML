@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House Price Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🏠 House Price Predictor</h1>
+    <p class="subtitle">Enter your house details to estimate the price</p>
+
+    <form action="/predict" method="POST">
+      <input type="number" name="sqft_living" placeholder="Living Area (sq ft)" required>
+      <input type="number" name="bedrooms" placeholder="Bedrooms" required>
+      <input type="number" name="bathrooms" placeholder="Bathrooms" step="0.25" required>
+      <input type="number" name="floors" placeholder="Floors" step="0.5" required>
+      <input type="number" name="yr_built" placeholder="Year Built" required>
+      <button type="submit">Predict Price</button>
+    </form>
+  </div>
+</body>
+</html>
